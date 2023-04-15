@@ -55,17 +55,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget-
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
+      - name: Restore
+        run: dotnet restore src/ContosoUniversity.sln
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+      - name: Build
+        run: dotnet build '/02 - Web UI Template/CognitiveSearch.Template.sln' --configuration Release --no-restore
+      
+      - name: Publish APP
+        run: dotnet publish --configuration Release --output PublishApp '02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj'
+        
+      - name: Upload APP results
+        uses: actions/upload-artifact@v2
         with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          name: app
+          path: PublishApp
 
   deploy:
     permissions:
@@ -77,11 +80,11 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+      - name: Download APP Artifact
+        uses: actions/download-artifact@v2
         with:
-          name: .net-app
-          path: app-artifact
+          name: app
+          path: app-artifact     
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
