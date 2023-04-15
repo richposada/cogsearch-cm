@@ -55,7 +55,7 @@ jobs:
 
 
       - name: Build with dotnet
-        run: dotnet build 'cogsearch-cm/02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj'  --configuration Release
+        run: dotnet build ${{env.DOTNET_ROOT}}'/02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj'  --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
