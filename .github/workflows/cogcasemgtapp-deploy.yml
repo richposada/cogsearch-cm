@@ -54,8 +54,8 @@ jobs:
 
       - name: dotnet build and publish
         run: |
-          dotnet restore 02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj
-          dotnet build --configuration Release 02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj
+          dotnet restore '02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj'
+          dotnet build --configuration Release '02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj'
           dotnet publish -c Release --property:PublishDir='${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
 
       - name: 'Run Azure webapp deploy action using publish profile credentials'
