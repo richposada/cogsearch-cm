@@ -56,7 +56,7 @@ jobs:
         run: dotnet restore '02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj'
           
       - name: dotnet build
-        run: dotnet build '02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj' --configuration Release --no-restore
+        run: dotnet build '02 - Web UI Template/CognitiveSearch.Template.sln' --configuration Release --no-restore
         
       - name: dotnet publish
         run: dotnet publish '02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj' -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
