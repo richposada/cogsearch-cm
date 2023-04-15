@@ -52,10 +52,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget-
 
-
+      - name: Build DotNet
+        # You may pin to the exact commit or the version.
+        # uses: Elskom/build-dotnet@54d97a0f7d5d5ca946404976db00d27386b09254
+        uses: Elskom/build-dotnet@v1.1.1
+        with:
+          SOLUTION_FILE_PATH: '/02 - Web UI Template/CognitiveSearch.UI/'
 
       - name: Build with dotnet
-        run: dotnet build **/CognitiveSearch.UI.csproj  --configuration Release
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
