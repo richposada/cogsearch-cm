@@ -21,7 +21,7 @@ name: Build and deploy ASP.Net Core app to an Azure Web App
 
 env:
   AZURE_WEBAPP_NAME: cogcasemgtapp    # set this to the name of your Azure Web App
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_PACKAGE_PATH: 'cogsearch-cm/02 - Web UI Template/CognitiveSearch.UI'      # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '6.0.x'                 # set this to the .NET Core version to use
 
 on:
@@ -59,7 +59,7 @@ jobs:
         run: dotnet build '02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj' --configuration Release --no-restore
         
       - name: dotnet publish
-        run: dotnet publish '02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj' -c Release --property:PublishDir='${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
+        run: dotnet publish '02 - Web UI Template/CognitiveSearch.UI/CognitiveSearch.UI.csproj' -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
 
       - name: 'Run Azure webapp deploy action using publish profile credentials'
         uses: azure/webapps-deploy@v2
