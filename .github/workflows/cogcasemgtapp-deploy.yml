@@ -35,9 +35,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: '02 - Web UI Template/CognitiveSearch.UI/'
 
     steps:
       - uses: actions/checkout@v3
@@ -56,7 +53,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Restore
-        run: dotnet restore src/ContosoUniversity.sln
+        run: dotnet restore '/02 - Web UI Template/CognitiveSearch.Template.sln'
 
       - name: Build
         run: dotnet build '/02 - Web UI Template/CognitiveSearch.Template.sln' --configuration Release --no-restore
