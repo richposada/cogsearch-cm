@@ -75,7 +75,11 @@ namespace CognitiveSearch.UI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            app.UseMvcWithDefaultRoute();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Requests}/{action=Index}");
+            });
         }
     }
 }
