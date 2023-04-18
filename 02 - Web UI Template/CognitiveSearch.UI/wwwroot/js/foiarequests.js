@@ -42,34 +42,40 @@ $(document).ready(function () {
         },
         columns: [
             {
-                field: "CaseNumber",
+                field: "caseId",
+                title: "Case Id",
+                width: "140px",
+                hidden: true
+            },
+            {
+                field: "caseNumber",
                 title: "Case Number",
                 width: "140px"                
             },
             {
-                field: "CaseType",
+                field: "caseType",
                 title: "Case Type",
                 width: "140px"
             },
             {
-                field: "RequestorFullName",
+                field: "requestorFullName",
                 title: "Requestor",
                 width: "200px"
             },
             {
-                field: "RequestorOrganization",
+                field: "requestorOrganization",
                 title: "Requestor Organization",
                 width: "200px"
 
             },
             {
-                field: "AssignedOfficerName",
+                field: "assignedOfficerName",
                 title: "Assigned Officer",
                 width: "200px"
 
             },
             {
-                field: "RequestDate",
+                field: "requestDate",
                 title: "Request Date",
                 width: "200px",
                 filterable: false,
