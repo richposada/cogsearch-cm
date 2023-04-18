@@ -2,7 +2,7 @@
 
 namespace CognitiveSearch.UI.Controllers
 {
-    public class CaseManagementController : Controller
+    public class RequestsController : Controller
     {
         public IActionResult Index()
         {
