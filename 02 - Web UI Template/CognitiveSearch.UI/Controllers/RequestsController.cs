@@ -75,5 +75,18 @@ namespace CognitiveSearch.UI.Controllers
 
             return Json(results);
         }
+
+
+        public ActionResult CreateRequest()
+        {
+            
+            return View("Details");
+        }
+
+        public ActionResult FOIARequest()
+        {
+            FOIARequest foiaRequest = new FOIARequest();
+            return PartialView("_FOIARequest", foiaRequest);
+        }
     }
 }

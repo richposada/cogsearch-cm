@@ -2,6 +2,10 @@ var wnd, detailsTemplate;
 
 $(document).ready(function () {
 
+    $("#btnCreateRequest").click(function () {
+        CreateRequest();
+    });
+
     $("#divLoadingTabStrip").hide();
 
     $("#foiaRequestsGrid").kendoGrid({
@@ -83,6 +87,10 @@ $(document).ready(function () {
             }
         ]
     });
+
+
+
+   
 
 });
 
