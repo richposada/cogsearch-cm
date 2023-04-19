@@ -1,25 +1,24 @@
 ﻿@model CognitiveSearch.UI.Models.FOIARequest
 
 <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4" style="font-size:24px;">  
+    <div class="row" style="padding-top:20px;padding-bottom:20px;">
+            <div class="col-sm-2" style="font-size:16px;">  
                 Create FOIA Request Case
             </div>
+            <div class="col-sm-1">
+                <input type="radio" onclick="ShowIngest();" name="flexRadioDefault" id="flexRadioDefault1">
+                <label for="flexRadioDefault1" style="font-size:14px;font-weight:200;">
+                    Ingest
+                </label>
+            </div>
+            <div class="col-sm-1">
+                <input type="radio" onclick="ShowManual();" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label for="flexRadioDefault2" style="font-size:14px;font-weight:200;">
+                    Manual
+                </label>
+            </div>
         </div>
-        <div class="row">
-                <div class="col-sm-4">
-                    <input type="radio" onclick="ShowIngest();" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label for="flexRadioDefault1">
-                        Automatic Ingest
-                    </label>
-                </div>
-                <div class="col-sm-4">
-                    <input type="radio" onclick="ShowManual();" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label for="flexRadioDefault2">
-                        Manual
-                    </label>
-                </div>
-         </div>
+        
         <div class="row" id="divIngest" style="display:none">
             <div class="col-sm-8"  >
                 <div id="example">
