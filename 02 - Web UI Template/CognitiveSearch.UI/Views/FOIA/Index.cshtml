@@ -1,12 +1,15 @@
 ﻿@{
     ViewData["Title"] = "FOIA Requests";
 }
+
+
+
 <script src="@Url.Content("~/js/foiarequests.js?v=" + DateTime.Now.Ticks.ToString())"></script>
 <div class="container-fluid">
     <div class="row" style="padding-top:20px;padding-bottom:20px;">
         <div class="col-sm-1"></div>
         <div class="col-sm-9" style="font-size:24px;">FOIA Requests</div>
-        <div class="col align-self-start"> <input class="btn btn-primary" type="button" value="Create FOIA Request" onclick="location.href='@Url.Action("CreateRequest", "Requests")'"></div>
+        <div class="col align-self-start"> <input class="btn btn-primary" type="button" value="Create FOIA Request" onclick="location.href='@Url.Action("CreateRequest", "FOIA")'"></div>
     </div>
     <div class="row">
         <div class="col-sm-1"></div>

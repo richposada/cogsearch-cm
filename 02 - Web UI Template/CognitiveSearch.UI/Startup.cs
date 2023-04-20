@@ -78,7 +78,7 @@ namespace CognitiveSearch.UI
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute("default", "{controller=Requests}/{action=Index}");
+                routes.MapRoute("default", "{controller=Home}/{action=Index}");
             });
         }
     }

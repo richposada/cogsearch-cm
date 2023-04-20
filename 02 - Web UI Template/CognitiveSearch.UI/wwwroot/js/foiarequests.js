@@ -14,7 +14,7 @@ $(document).ready(function () {
                 read: function (options) {
                     $.ajax({
                         type: "POST",
-                        url: "Requests/GetFOIARequests",
+                        url: "FOIA/GetFOIARequests",
                         dataType: 'json',
                         success: function (data) {
                             options.success(data);
