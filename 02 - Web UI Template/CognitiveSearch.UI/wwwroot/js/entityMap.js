@@ -44,7 +44,9 @@ function SearchEntities() {
     UpdateLocationBar();
     UpdateGraphParameterUI();
 
-    document.getElementById("entity-loading-indicator").style.display = "block";
+    if (document.getElementById("entity-loading-indicator") !== null) {
+        document.getElementById("entity-loading-indicator").style.display = "block";
+    }
 
     GetGraph(q);
 
@@ -80,7 +82,9 @@ function LoadEntityMap() {
     document.getElementById("results-container").style.display = "none";
     document.getElementById("details-modal").style.display = "none";
     document.getElementById("entity-map").style.display = "block";
-    document.getElementById("entity-loading-indicator").style.display = "block";
+    if (document.getElementById("entity-loading-indicator") !== null) {
+        document.getElementById("entity-loading-indicator").style.display = "block";
+    }
 
     document.getElementById("e").value = q;
     SearchEntities();
@@ -295,7 +299,9 @@ function UpdateEntityGraph() {
         .on("tick", ticked);
     simulation.force("link")
         .links(viewParams.links);
-    document.getElementById("entity-loading-indicator").style.display = "none";
+    if (document.getElementById("entity-loading-indicator") !== null) {
+        document.getElementById("entity-loading-indicator").style.display = "none";
+    }
 
     // Step the simulation to let it settle
     for (var i = 0; i < 30; ++i)

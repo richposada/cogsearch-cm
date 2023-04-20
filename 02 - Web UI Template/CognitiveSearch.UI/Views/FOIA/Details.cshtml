@@ -15,6 +15,10 @@
                         FOIA Request
                     </li>
                     <li>
+                        <i class="mr-1"></i>
+                        Search
+                    </li>
+                    <li>
                         <i class="fas fa-plus-circle mr-1"></i>
                         Saved Searches
                     </li>
@@ -48,10 +52,11 @@
             animation: false,
             select: onSelect,
             contentUrls: [
-                '@Url.Action("FOIARequest", "Requests", null)',
-                '@Url.Action("SavedSearches", "Requests", null)',
-                '@Url.Action("ResponsiveDocuments", "Requests", null)',
-                '@Url.Action("Log", "Requests", null)'
+                '@Url.Action("FOIARequest", "FOIA", null)',
+                '@Url.Action("Search", "FOIA", null)',
+                '@Url.Action("SavedSearches", "FOIA", null)',
+                '@Url.Action("ResponsiveDocuments", "FOIA", null)',
+                '@Url.Action("Log", "FOIA", null)'
             ]
         }).data("kendoTabStrip");
     });

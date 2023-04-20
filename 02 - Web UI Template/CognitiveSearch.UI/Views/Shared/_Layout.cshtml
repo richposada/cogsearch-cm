@@ -1,6 +1,5 @@
 ﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved.
      Licensed under the MIT License. -->
-
 @using CognitiveSearch.UI.Configuration
 @inject AppConfig AppConfig
 
@@ -18,8 +17,6 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-theme.min.css" />
 
-    
-
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
 
@@ -30,13 +27,17 @@
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
+   @* <script src="~/lib/kendo/2019.3.1023/jquery.min.js"></script>*@
+    <script src="~/lib/kendo/2019.3.1023/jszip.min.js"></script>
+    <script src="~/lib/kendo/2019.3.1023/kendo.all.min.js"></script>
+
     <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/d3-selection-multi.v1.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    
+
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
 </head>
 <body>
@@ -48,11 +49,14 @@
 
     @await Html.PartialAsync("_Footer")
 
+    
     <script type="text/javascript">
         // Change JQueryUI plugin names to fix name collision with Bootstrap.
         $.widget.bridge('uitooltip', $.ui.tooltip);
         $.widget.bridge('uibutton', $.ui.button);
     </script>
+    
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 
     <script src="~/js/tags.js"></script>
@@ -65,28 +69,16 @@
     <script src="~/js/entityMap.js"></script>
     <script src="~/js/PolygonDrawingTool.js"></script>
 
-    <script src="~/lib/kendo/2019.3.1023/jquery.min.js"></script>
-    <script src="~/lib/kendo/2019.3.1023/jszip.min.js"></script>
-    <script src="~/lib/kendo/2019.3.1023/kendo.all.min.js"></script>
-
-    <link rel="stylesheet" href="~/lib/kendo/css/2019.3.1023/kendo.default-v2.min.css">
-    @*<link href="~/lib/fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet" />*@
-    @*<script defer src="~/lib/fontawesome-free-5.12.0-web/js/all.js"></script>*@
-    <script src="https://kit.fontawesome.com/52a44b1794.js" crossorigin="anonymous"></script>
-
     <script>
-        $(function () {
-            $('.advancedAutoComplete').autocomplete({
-                source: "/home/suggest",
-                minLength: 2,
-                select: function (event, ui) {
-                    Search();
-                }
-            });
-		})
-
         customizable = '@AppConfig.Customizable';
     </script>
+    
+
+  
+    <link rel="stylesheet" href="~/lib/kendo/css/2019.3.1023/kendo.default-v2.min.css">
+    <link href="~/lib/fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet" />
+    <script src="~/lib/fontawesome-free-5.12.0-web/js/all.js"></script>
+    
 
     @RenderSection("Scripts", required: false)
 </body>
